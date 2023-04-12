@@ -1,12 +1,1 @@
-{
-    "students":[
-        {
-            "name":"neha"
-        }
-    ],
-    "teachers":[
-        {
-            "name":"pulkit"
-        }
-    ]
-}
+{"students":[{"name":"neha"},{"name":"Rahul","city":"pune"},{"name":"yeahh"}],"teachers":[{"name":"pulkit"}]}
