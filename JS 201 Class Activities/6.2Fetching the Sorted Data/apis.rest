@@ -1,0 +1,8 @@
+
+### GET all cats
+GET http://localhost:9090/cats
+
+//GET /posts?_sort=views&_order=asc
+
+###GET all cats sorted in ascending order
+GET http://localhost:9090/cats?_sort=name&_order=asc

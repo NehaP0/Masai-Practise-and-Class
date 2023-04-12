@@ -1,0 +1,25 @@
+
+### GET all cats
+GET http://localhost:9090/cats
+
+###Accessing todos without token
+GET http://localhost:9090/todos
+
+
+###Authentication for todos
+POST http://localhost:9090/login
+Content-Type: application/json
+
+//should have a space here between Content-Type and the actual object(json)
+
+{
+    "username":"admin",
+    "password":"admin" 
+}
+
+
+###Accessing todos with token
+GET http://localhost:9090/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0bmFtZSI6IkFkIiwibGFzdG5hbWUiOiJNaW5pc3RlciIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRsTG01THA0MHVCUjlDVXJabjU4Q2RPbDh5dTVHcDJ1bUFPLjZseS52V2NaMGEwdlVLc0hpQyIsImF2YXRhciI6Imh0dHBzOi8vY2xvdWRmbGFyZS1pcGZzLmNvbS9pcGZzL1FtZDNXNUR1aGdIaXJMSEdWaXhpNlY3NkxoQ2taVXo2cG5GdDVBSkJpeXZIeWUvYXZhdGFyLzc2Mi5qcGciLCJ1c2VyTGV2ZWwiOjQsImNyZWF0ZWRBdCI6MTY3MDE2NTk4MDYzOCwiaWF0IjoxNjczMTIzMjMzLCJleHAiOjE2NzMxMzQwMzN9.g9-0Hgwc4V1q7TuDQzBycnXkCvyjXvFoegstawg8jac
+
+

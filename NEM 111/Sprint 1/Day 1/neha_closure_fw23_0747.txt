@@ -1,0 +1,19 @@
+Closure
+
+
+It is a combination of functions with reference to its surrounding state, i.e. a closure gives you access to an outer function's scope from an inner function. 
+Closures are created every time a function is created, at function creation time.
+
+Example:
+
+function parent(){
+	let fruit = apple;
+	function child(){
+		console.log(fruit)
+	}
+	child()
+}
+
+parent()
+
+Output: apple

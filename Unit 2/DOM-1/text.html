@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Changing Text</title>
+  </head>
+  <body>
+    <h1 id="heading">Heading Before Click</h1>
+    <button id="btn">Button</button>
+  </body>
+  <script>
+    // Heading after Click
+    let myTextChanger = document.getElementById("btn");
+    let myHeading = document.getElementById("heading");
+
+    console.log(myHeading.innerText);
+
+    myTextChanger.addEventListener("click", () => {
+      headingText("Heading after Click");
+    });
+
+    function headingText(newText) {
+      myHeading.innerText = newText;
+    }
+  </script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      #btn {
+        background-color: red;
+      }
+
+      /* id, class, tag , universal  */
+    </style>
+  </head>
+  <body>
+    <button id="btn" onclick="Log()">Button</button>
+  </body>
+  <script>
+    let myButton = document.getElementById("btn");
+    // DOM -> Document Object Model
+    function Log() {
+      console.log("Log on Click");
+      alert("Alert from button Click");
+    }
+    myButton.addEventListener("click", Log);
+    // 2 things -> event name, function(This should not be a function call)
+  </script>
+</html>

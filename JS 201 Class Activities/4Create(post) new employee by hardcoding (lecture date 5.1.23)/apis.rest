@@ -1,0 +1,46 @@
+###GET all employees
+//READ operation
+GET http://localhost:9090/employees
+
+### PUT
+//CREATING new employee called NEHA if doesn't exist already
+//if employee exists already, it changes its data and gives it the data that only we put here, like if I only give "name", it will have only name and nothing else 
+//CREATE operation
+//put same link and send some data in form of an object
+//tell server which type of data you are giving (here "json")
+//if you don't give ID, server will automatically create an ID
+POST http://localhost:9090/employees
+Content-Type: application/json
+
+ {
+    "name": "Neha",
+    "image": "/images/avatar/avatar1.jpeg",
+    "department": 5,
+    "salary": 2000000
+  }
+
+
+###want to GET a particular user like I want "Himanshu"
+//READ operation
+//put "/userid" infront of the url
+GET http://localhost:9090/employees/tEYFrHNsdO
+
+###want to DELETE a particular user like I want to delete "Himanshu"
+//write "DELETE" instead of "GET"
+//put "/userid" infront of the url
+DELETE http://localhost:9090/employees/dHIeXEWlfX
+
+
+###PATCH
+//Want to increase slary of Flossy to 50L
+//i.e utna hi patch lagana hai
+//put "/userid" infront of the url
+//give data that you want  to change
+//tell server what type of data it is 
+PATCH http://localhost:9090/employees/2
+Content-Type: application/json
+
+{
+  "salary": 500000
+}
+

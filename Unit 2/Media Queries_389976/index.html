@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-101 C2</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: auto;
+      }
+      .top > div {
+        width: 45%;
+      }
+      .top img {
+        width: 100%;
+      }
+
+      /* Mid Part Starts Here  */
+      .mid {
+        width: 90%;
+        margin: auto;
+      }
+      .mid > div:nth-child(1) {
+        text-align: center;
+      }
+      .mid > div:nth-child(2) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      .mid img {
+        margin: auto;
+        display: block;
+      }
+      .mid > div:nth-child(2) > div {
+        background-color: orange;
+      }
+
+      /* Bottom Part Starts Here  */
+      .bottom {
+        width: 90%;
+        margin: auto;
+      }
+      .bottom > div:nth-child(2) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      .bottom img {
+        width: 100%;
+      }
+      .bottom button {
+        margin: auto;
+        display: block;
+      }
+      @media all and (max-width: 1100px) and (min-width: 601px) {
+        /* Medium Screen Styles  */
+        .top {
+          flex-direction: column;
+        }
+        .top > div {
+          width: 100%;
+        }
+        .mid > div:nth-child(2) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .bottom > div:nth-child(2) {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+      }
+
+      @media all and (max-width: 601px) and (min-width: 200px) {
+        /* Small Screen Styles  */
+        .top {
+          flex-direction: column;
+        }
+        .top > div {
+          width: 100%;
+        }
+        .mid > div:nth-child(2) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .bottom > div:nth-child(2) {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <!-- Two Divs should be inside here  -->
+      <div>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis,
+          neque, esse quos officia quam possimus alias obcaecati reprehenderit
+          fuga dolore ipsum expedita magni. Blanditiis, error!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus,
+          ipsum? Aliquam repellendus, obcaecati nisi unde quidem ducimus
+          veritatis quos voluptate quis illum ad tempore minus soluta fugiat
+          sequi, sint numquam deleniti excepturi, velit accusantium corporis.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate
+          fuga aperiam debitis hic suscipit aut?
+        </p>
+      </div>
+      <div>
+        <img
+          src="https://marketup.com/wp-content/uploads/2022/06/Home-Mock.png"
+          alt="error"
+        />
+      </div>
+    </div>
+    <div class="mid">
+      <!-- Two Divs should be inside here and on the second div you have to put 8 caards  -->
+      <div>
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dicta?
+        </p>
+      </div>
+      <div>
+        <div>
+          <img
+            src="https://marketup.com/wp-content/themes/marketup/assets/icons/recursos/vendas.svg"
+            alt=""
+          />
+          <h3>Para Suan Vendas</h3>
+          <p>Frente De Caixa</p>
+          <p>Loja Virtual</p>
+          <p>Peddios</p>
+        </div>
+        <div>
+          <img
+            src="https://marketup.com/wp-content/themes/marketup/assets/icons/recursos/vendas.svg"
+            alt=""
+          />
+          <h3>Para Suan Vendas</h3>
+          <p>Frente De Caixa</p>
+          <p>Loja Virtual</p>
+          <p>Peddios</p>
+        </div>
+        <div>
+          <img
+            src="https://marketup.com/wp-content/themes/marketup/assets/icons/recursos/vendas.svg"
+            alt=""
+          />
+          <h3>Para Suan Vendas</h3>
+          <p>Frente De Caixa</p>
+          <p>Loja Virtual</p>
+          <p>Peddios</p>
+        </div>
+        <div>
+          <img
+            src="https://marketup.com/wp-content/themes/marketup/assets/icons/recursos/vendas.svg"
+            alt=""
+          />
+          <h3>Para Suan Vendas</h3>
+          <p>Frente De Caixa</p>
+          <p>Loja Virtual</p>
+          <p>Peddios</p>
+        </div>
+        <div>
+          <img
+            src="https://marketup.com/wp-content/themes/marketup/assets/icons/recursos/vendas.svg"
+            alt=""
+          />
+          <h3>Para Suan Vendas</h3>
+          <p>Frente De Caixa</p>
+          <p>Loja Virtual</p>
+          <p>Peddios</p>
+        </div>
+        <div>
+          <img
+            src="https://marketup.com/wp-content/themes/marketup/assets/icons/recursos/vendas.svg"
+            alt=""
+          />
+          <h3>Para Suan Vendas</h3>
+          <p>Frente De Caixa</p>
+          <p>Loja Virtual</p>
+          <p>Peddios</p>
+        </div>
+        <div>
+          <img
+            src="https://marketup.com/wp-content/themes/marketup/assets/icons/recursos/vendas.svg"
+            alt=""
+          />
+          <h3>Para Suan Vendas</h3>
+          <p>Frente De Caixa</p>
+          <p>Loja Virtual</p>
+          <p>Peddios</p>
+        </div>
+        <div>
+          <img
+            src="https://marketup.com/wp-content/themes/marketup/assets/icons/recursos/vendas.svg"
+            alt=""
+          />
+          <h3>Para Suan Vendas</h3>
+          <p>Frente De Caixa</p>
+          <p>Loja Virtual</p>
+          <p>Peddios</p>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <!-- Two Divs should be inside here and on the second div you have to put 4 caards  -->
+      <div>
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, hic!
+        </p>
+      </div>
+      <div>
+        <div>
+          <img
+            src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-09-08/Screenshot%202022-09-06%20at%2012.13.44%20PM_859545.png"
+            alt=""
+          />
+          <h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi,
+            repudiandae?
+          </h3>
+          <button>SAIBA MAIS</button>
+        </div>
+        <div>
+          <img
+            src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-09-08/Screenshot%202022-09-06%20at%2012.13.44%20PM_859545.png"
+            alt=""
+          />
+          <h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi,
+            repudiandae?
+          </h3>
+          <button>SAIBA MAIS</button>
+        </div>
+        <div>
+          <img
+            src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-09-08/Screenshot%202022-09-06%20at%2012.13.44%20PM_859545.png"
+            alt=""
+          />
+          <h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi,
+            repudiandae?
+          </h3>
+          <button>SAIBA MAIS</button>
+        </div>
+        <div>
+          <img
+            src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-09-08/Screenshot%202022-09-06%20at%2012.13.44%20PM_859545.png"
+            alt=""
+          />
+          <h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi,
+            repudiandae?
+          </h3>
+          <button>SAIBA MAIS</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

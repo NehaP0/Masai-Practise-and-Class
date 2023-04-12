@@ -1,0 +1,35 @@
+
+### Base URL
+GET http://localhost:9090
+
+###Registration of new user
+POST http://localhost:9090/register
+Content-Type: application/json
+
+{
+    "username":"abcd",
+    "password":"1234",
+    "email":"abcd@gmail.com",
+    "firstname":"ab",
+    "lastname":"cd",
+    "avatar":"https://in.images.search.yahoo.com/search/images;_ylt=AwrPrFtq3Llj1Q42mQy9HAx.;_ylu=c2VjA3NlYXJjaARzbGsDYXNzaXN0;_ylc=X1MDMjExNDcyMzAwNQRfcgMyBGZyA21jYWZlZQRmcjIDc2EtZ3Atc2VhcmNoBGdwcmlkA0ZqM3FjcjgxUi42UnQzbkVmVWhWWUEEbl9yc2x0AzAEbl9zdWdnAzIEb3JpZ2luA2luLmltYWdlcy5zZWFyY2gueWFob28uY29tBHBvcwMxBHBxc3RyA2F2YXRhciBwZW9wbGUEcHFzdHJsAzEzBHFzdHJsAzIwBHF1ZXJ5A3JvYmxveCUyMGF2YXRhciUyMHBlb3BsZQR0X3N0bXADMTY3MzEyNDk4NQR1c2VfY2FzZQM-?p=roblox+avatar+people&fr=mcafee&fr2=sa-gp-search&ei=UTF-8&x=wrt&type=E211IN1487G0#id=7&iurl=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp9137820.jpg&action=click"
+}
+
+###Trying to login with wrong credentials
+POST http://localhost:9090/login
+Content-Type: application/json
+
+{
+    "username":"abcd",
+    "password":"1"
+}
+
+###Trying to login with correct credentials
+POST http://localhost:9090/login
+Content-Type: application/json
+
+{
+    "username":"abcd",
+    "password":"1234"
+}
+

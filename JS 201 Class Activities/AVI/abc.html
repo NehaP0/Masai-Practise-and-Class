@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .div+H1{
+            color: green;
+            border: 5px solid black;
+        }
+        p{
+            border: 5px solid black;  
+        }
+    </style>
+</head>
+<body>
+    <!-- <H1>HEYYYaaaa</H1>
+
+    <div class="div"></div>
+    <H1>HEYYY</H1>
+    <p>para</p> -->
+    <button class="button">1</button>
+    <button class="button">2</button>
+    <button class="button">3</button>
+    <button class="button">4</button>
+    <button class="button">5</button>
+</body>
+</html>
+<script>
+    Button = document.getElementsByClassName("button")
+    console.log(Button)
+    for(let i=0; i<Button.length; i++){
+        let button= Button[i]
+        button.addEventListener('click',(e)=>{
+            console.log(e.currentTarget)
+        })
+    }
+
+    let abc= function(){
+        //console.log(x)
+        var x =2
+        //return x
+        
+    }
+//     console.log(abc())
+//     let obj= {"a":1}
+//  obj["a"]=2
+// console.log(obj)
+
+// let x ="abcd"
+// console.log(x)
+// let y= x
+// console.log(y)
+
+// let x =["a", "b"]
+// console.log(x)
+// let y= x
+// console.log(y)
+//console.log(x)
+console.log(y)
+let x = 2
+var y=4
+</script>
