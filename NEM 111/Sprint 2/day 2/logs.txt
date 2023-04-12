@@ -1,0 +1,4 @@
+Route: /, Method: GET Time: Wed Apr 12 2023 22:09:22 GMT+0530 (India Standard Time) 
+Route: /contact, Method: GET Time: Wed Apr 12 2023 22:09:26 GMT+0530 (India Standard Time) 
+Route: /about, Method: GET Time: Wed Apr 12 2023 22:09:32 GMT+0530 (India Standard Time) 
+Route: /data, Method: GET Time: Wed Apr 12 2023 22:09:40 GMT+0530 (India Standard Time) 
