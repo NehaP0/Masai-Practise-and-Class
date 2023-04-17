@@ -5,15 +5,15 @@ const logger = require("./logger")
 const cors = require("cors")
 let app = express()
 
-app.use(logger)
-app.use(timeLogger)
-app.use(cors())
+app.use(logger)         //middleware
+app.use(timeLogger)     //middleware
+app.use(cors())         //middleware
 
-app.use((req,res)=>{
-    console.log(1);
-    next()
-    console.log();
-})
+// app.use((req,res)=>{    //middleware
+//     console.log(1);
+//     next()
+//     console.log("hey");
+// })
 
 
 app.get("/", (req, res)=>{
