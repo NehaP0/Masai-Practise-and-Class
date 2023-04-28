@@ -1,14 +1,23 @@
-I don't want the connection to hyappen automatically, it should happen when I want
-Only when I call the main, the connection will happen
+npm i mongoose
+const mongoose = require("mongoose")
 
-URL of mongo: in shell, do mongosh
+
+I don't want the connection to happen automatically, it should happen when I want
+So I'll put it in "main" function
+So now Only when I call the main, the connection will happen
+
+Otherwise whenever I run "node index.js", connection would have happened
+
+
+### URL of mongo: 
+in shell, do mongosh
 you'll get 
-Connecting to:          mongodb:127.0.0.1:27017/?directConnection=true&serverSelection
+Connecting to:          mongodb:127.0.0.1:27017/
                                 localhost | Port num           
 
 if I put wrong link,
 I'll get connected to db and
- I'll get error after some time
+I'll get error after some time
 Why?
 Because it is asynchronous in nature
 
@@ -29,8 +38,9 @@ But if I want to disconnect at any time, I can simply do
 schema ===> model ===> document
   |           |          |
 structure  our icetray  our ice
+             (mould)     (product)
 
-Schema
+Schema   (its like typescript here)
 const userSchema = mongoose.Schema({
     name : String,
     age : Number,
@@ -42,54 +52,62 @@ const userSchema = mongoose.Schema({
 Model
 const UserModel = mongoose.model("user", userSchema) 
 takes collection name and schema name
-user is the collection name in which I will put my document
-userSchema is the schema with help of which I am creating the model
+"user" is the collection name in which I will put my document
+"userSchema" is the schema with help of which I am creating the model
 
-Now give database name in line number 7
-if I run the file, and in shell I do show dbs, I'll not see my data base
+Now give database name in line number 7 after /  i.e. learningMongoose
+if I run the file, and in shell I do show dbs, I'll not see my "learningMongoose" db
 coz I haven;t yet put any document in collection
 so write line number 15
 Always use the word await at line no 15
 
+
+Database - learningMongoose  we declare it in url i.e line num 7
+Collection - user            we declare it in model i.e line num 3
+
 in shell now you can check
 you'll see that the collection name has become "users" and not "user"
 Mongodb will automatically do it, coz collection has various documents
-Youl'll also see "__v: 0" --- this is the version key
+
+You'll also see "__v: 0" 
+this is the version key
 Version key is created by mongoose
-It will keep the track of inter nal revision of document
-i.e how many times I have changed or updated the document
+It will keep to track of number of internal revisions of document
+i.e how many times I have changed or updated that particular document
 When I update the document later, the "__v" will increment by 1 
-If I don;t want it, so in schema I write {versionKey: false}
+If I don;t want the version key, so in schema I write {versionKey: false}
 
 In line no. 15, I am not able to do insertOne
-Because mongoose have a different method to insertOne document
+Because mongoose have a different method if I want to insert only One document
 
 Observe that "UserModel" has capital "U"
 We know taht such naming convention is followed for Contructor functions
 So my UserModel is actually a constructor function.
-Hence if I wanty to insert one docuemnt, I'll make use of my UserModel constructor using new keyword as in line num 9
+Hence if I want to insert one docuemnt, I'll make use of my UserModel constructor using new keyword as in line num 9
 and then do await user.save()
 
 
 ## INTERVIEW QUEST:
 
-How am I able to userModel in line number 15, as I have declared it at line num 36?
-Ans- I have accessed useModel inside Main function. 
+How am I able to use userModel in line number 15, as I have declared it at line num 36, i.e I am using it before declaring it. How?
+Ans- I have accessed userModel inside Main function. 
 My main function is asynchronous in nature
-So before line number 15, Line num 36 will be executed.
+So before line number 15, Line num 36 will get executed.
+i.e userModel declaration is happening first, then I am using it.
 
 
 --------------------------------------------------
 ## Validation: 
 
-    ## require
+ ## require
 
-I have written
+I have written in my Schema
     name : {type: String, require:true} 
 
-So during adding data, if I miss adding the name, it will not get added .
+So during adding a document, if I miss adding the name, document will not get added, coz name is a required key.
 
-Even name : ""
+Even 
+    name : ""
 
 also will not work, because empty string is a falsy value.
 
@@ -99,6 +117,7 @@ Every kind of important logic like validation etc should not be written in the f
 
 -----------------------------------------------
 ## Typecasting
+Done by mongoose
 
 Typecasting: If string can be converted to a number, it will get converted to a number, and will get added to the db.
 Similarly if number can be converted to string, it will get converted to string.
