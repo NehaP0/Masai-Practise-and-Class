@@ -3,11 +3,35 @@ const {UserModel} = require("../model/user.model")
 const jwt = require("jsonwebtoken")
 
 const userRouter = express.Router()
+userRouter.use(express.json())
+
+userRouter.get("/", async(req, res)=>{
+    try{
+        const users = await UserModel.find() 
+        res.status(200).send(users)//standard way of sending response
+    }
+    catch(err){
+        res.status(400).send({"err" : err.message})
+    }
+    
+})
+
+userRouter.delete("/delete/:id", async(req, res)=>{
+    const {id} = req.params
+    try{
+        await UserModel.findByIdAndDelete({_id : id}) 
+        res.status(200).send("deleted")
+    }
+    catch(err){
+        res.status(400).send({"err" : err.message})
+    }
+    
+})
 
 userRouter.post("/register", async(req, res)=>{  //remeber its a "post" request
     const userdetails = req.body
     try{
-        const user = new UserModel(userdetails) //while testing I cannot put my data in database directly hence I am creating a new instance of userModel
+        const user = new UserModel(userdetails) 
         await user.save()
         res.status(200).send({"msg" : "New user registered"})//standard way of sending response
     }
