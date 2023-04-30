@@ -40,7 +40,7 @@ So whenever you do some changes to your database, just do a refresh in compass a
 
 
 ### Better way of passing token and accessing token
-Passing token:
+In fronyent, we used to pass token like this
 fetch(backend url,{
     method : "POST",
     headers : {
@@ -48,6 +48,7 @@ fetch(backend url,{
     }
 })
 
+In backend I should access token like: 
 Accessing token:
     const token = req.headers.authorization
 

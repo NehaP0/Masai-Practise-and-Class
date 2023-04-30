@@ -27,10 +27,8 @@ server.get("/contacts", (req, res)=>{
 
 //Protected Routes:
 
-//http://localhost:8080/movie?token=bla
-
 server.get("/movie", (req, res)=>{
-    const {token} = req.query
+    const token = req.headers.authorization
 
     jwt.verify(token, 'masai', function(err, decoded) {
         if(decoded){
@@ -44,7 +42,7 @@ server.get("/movie", (req, res)=>{
 })
 
 server.get("/series", (req, res)=>{
-    const {token} = req.query
+    const token = req.headers.authorization
 
     jwt.verify(token, 'masai', function(err, decoded) {
         if(decoded){
