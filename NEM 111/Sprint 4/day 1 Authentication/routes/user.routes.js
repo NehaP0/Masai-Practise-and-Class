@@ -5,28 +5,28 @@ const jwt = require("jsonwebtoken")
 const userRouter = express.Router()
 userRouter.use(express.json())
 
-userRouter.get("/", async(req, res)=>{
-    try{
-        const users = await UserModel.find() 
-        res.status(200).send(users)//standard way of sending response
-    }
-    catch(err){
-        res.status(400).send({"err" : err.message})
-    }
+// userRouter.get("/", async(req, res)=>{
+//     try{
+//         const users = await UserModel.find() 
+//         res.status(200).send(users)//standard way of sending response
+//     }
+//     catch(err){
+//         res.status(400).send({"err" : err.message})
+//     }
     
-})
+// })
 
-userRouter.delete("/delete/:id", async(req, res)=>{
-    const {id} = req.params
-    try{
-        await UserModel.findByIdAndDelete({_id : id}) 
-        res.status(200).send("deleted")
-    }
-    catch(err){
-        res.status(400).send({"err" : err.message})
-    }
+// userRouter.delete("/delete/:id", async(req, res)=>{
+//     const {id} = req.params
+//     try{
+//         await UserModel.findByIdAndDelete({_id : id}) 
+//         res.status(200).send("deleted")
+//     }
+//     catch(err){
+//         res.status(400).send({"err" : err.message})
+//     }
     
-})
+// })
 
 userRouter.post("/register", async(req, res)=>{  //remeber its a "post" request
     const userdetails = req.body
