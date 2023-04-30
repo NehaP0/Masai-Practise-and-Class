@@ -20,11 +20,11 @@ API Documentation (Swagger)
 Authentication: verifying identity
 Authorization: Access permission
 Register route - posted data in db
-login route - comparing email and password with one in db and autheticate
+login route - comparing email and password with one in db and authetication
 For authentication and authorisation I need token.
-Token should be always uniquer and random hence I used JWT.
+Token should be always unique and random hence I used JWT.
 JWT- JSON Web Token
-Can be used for Authentication, Authorisation, Transfering data
+Can be used for Authentication, Authorisation and Transfering data
 3 importatnt components of JWT: 
     1. Header - it has-> Encryption algorithm, type of token
     2. Payload - Any random data which will help us in creation of token
@@ -33,14 +33,24 @@ Can be used for Authentication, Authorisation, Transfering data
 While visiting private routes, I can use this decoded token
 
 
+### To see my database and all in GUI, I am using mongodb compass app that I have installed. Just click connect and you will see all your databases.
+
+So whenever you do some changes to your database, just do a refresh in compass and the changes will reflect over there as well.
+
+
 
 ### Better way of passing token and accessing token
-fetch(url,{
+Passing token:
+fetch(backend url,{
     method : "POST",
     headers : {
         authorization : `Bearer ${token}`
     }
 })
+
+Accessing token:
+    const token = req.headers.authorization
+
 
 
 ### Hashing 
