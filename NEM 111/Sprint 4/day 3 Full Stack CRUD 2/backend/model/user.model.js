@@ -4,7 +4,7 @@ const userSchema = mongoose.Schema({
     name : {type: String, required: true},
     email : {type: String, required: true},
     password : {type: String, required: true},
-    age : {type: Number, required: true}
+    age : {type: Number, required: true},
 },{
     versionKey: false
 })
@@ -12,3 +12,11 @@ const userSchema = mongoose.Schema({
 const UserModel = mongoose.model("user", userSchema)
 
 module.exports = {UserModel}
+
+
+// {
+//     "name" : "",
+//     "email" : "",
+//     "password" : "",
+//     "age" : ""
+// }
