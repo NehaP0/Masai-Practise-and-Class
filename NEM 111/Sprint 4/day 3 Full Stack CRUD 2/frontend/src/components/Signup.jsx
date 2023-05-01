@@ -8,20 +8,20 @@ const Signup = () => {
     const [age, setage] = useState("")
 
     const HandleSubmit = ()=>{
-        const payload = {
-          name, email, password, age
-        }
+        const data = {name, email, password, age}
+
+        //console.log(data);  //{name: 'djnf', email: 'jdfnk', password: 'djf', age: 'kjsnd'}
         
-        fetch("http://localhost:8080/users/register", {
+        fetch("http://localhost:8000/users/register", {
           method : "POST",
           headers : {
             "Content-type" : "application/json"
           },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(data) //its in object form, we need to send in json form, hence stringify
         })
         .then(res=>res.json())
-        .then(res=>console.log(res))
-        .catch(err=>console.log(err))
+        .then(res=>console.log(res)) //{msg: 'New user registered'}
+        .catch(err=>console.log(err))        
     }
 
   return (

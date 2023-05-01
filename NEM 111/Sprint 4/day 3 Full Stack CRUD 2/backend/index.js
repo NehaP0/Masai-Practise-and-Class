@@ -1,14 +1,16 @@
 const express = require("express")
 const connection = require("./db")
-const {userRouter} = require("./routes/user.routes")
-const jwt = require("jsonwebtoken")
 const auth = require("./middlewares/auth.middleware")
+const {userRouter} = require("./routes/user.routes")
 const noteRouter = require("./routes/notes.routes")
+const cors = require("cors")
 
 const server = express()
 
 
 server.use(express.json())
+
+server.use(cors())
 
 server.use("/users", userRouter)
 

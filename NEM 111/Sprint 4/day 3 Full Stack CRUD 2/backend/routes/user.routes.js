@@ -7,28 +7,6 @@ const bcrypt = require('bcrypt');
 const userRouter = express.Router()
 userRouter.use(express.json())
 
-// userRouter.get("/", async(req, res)=>{
-//     try{
-//         const users = await UserModel.find() 
-//         res.status(200).send(users)//standard way of sending response
-//     }
-//     catch(err){
-//         res.status(400).send({"err" : err.message})
-//     }
-    
-// })
-
-// userRouter.delete("/delete/:id", async(req, res)=>{
-//     const {id} = req.params
-//     try{
-//         await UserModel.findByIdAndDelete({_id : id}) 
-//         res.status(200).send("deleted")
-//     }
-//     catch(err){
-//         res.status(400).send({"err" : err.message})
-//     }
-    
-// })
 
 userRouter.post("/register", async(req, res)=>{  //remeber its a "post" request
     const {name, email, password, age} = req.body
@@ -54,7 +32,7 @@ userRouter.post("/login", async(req, res)=>{ //remeber its a "post" request not 
         if(user){
             bcrypt.compare(password, user.password, function(err, result) {
                 if(result == true){
-                    const token = jwt.sign({ course: 'backend' }, 'masai');
+                    const token = jwt.sign({ authorID :  user._id, authorName : user.name}, 'masai');
                     res.status(200).send({"msg": "Login Successful", "token" : token})
                 } 
                 else{
